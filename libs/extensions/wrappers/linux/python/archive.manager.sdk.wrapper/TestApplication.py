@@ -120,7 +120,6 @@ def main():
 
     inputDirectory, outputDirectory, contentManagementPolicyFile, pathToLib = getCommandLineArgs()
     inputFiles = getFiles(inputDirectory)
-    print (pathToLib)
     gw = loadGwArchiveLib(pathToLib)
 
     from os import path, mkdir
@@ -138,7 +137,7 @@ def main():
             inputFileStream = f.read()
 
         protect_result = gw.GwFileProtectAndReportArchive(inputFileStream, configFileStream)
-        
+
         if protect_result.returnStatus == 1:
             print("Info: Writing protect mode output")
             outputFilePath = path.join(outputDirectory, "protect_" + path.basename(eachFile))
