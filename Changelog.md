@@ -37,6 +37,7 @@ The Lite mode cameras have been disabled for increased stability
 - Fix for crashing PDF. Error reporting function was called with two format arguments
 - Updated MP4 camera with lots of structural fixes and inclusion of missing h265 structures
 
+# 2021-04-21
 
 ### Rebuild v1.197
 
