@@ -13,29 +13,29 @@ All notable changes to this project will be documented in this file. It is only 
 
 The Lite mode cameras have been disabled for increased stability
 
-#### Accumulated bug fixes since last production release (1.157):
+#### Accumulated bug fixes since last production release (1.157)
 
-DDE - Fix for rendering issue caused by DDE removal 
-Fix Fuzzed Doc files causing engine to hang (113996). 
-PDF: Handle empty article thread arrays correctly 
-PPTX: Fix for end of stream errors 
-TIFF: Alignment of handling with Editor (size in analysis reports, geotag validation) 
-XLSM: Fix for end of stream errors 
-PDF: Prevent early bailout when invalid image stream is encountered during syntax checking 
-XLS: file with hyperlinks needs repairing 
-XLS: Analysis report stops reporting after embedded image Issue item is reported 
-XLSM: Fix applied for repair message appearing for Threaded Comments 
-DOCX: Fix hyperlink sanitisation repair message popup 
-Fix issue with validation of MachO Segment Command length fields 
-PDF: Respect governing content management switch when reporting non-conformances in source dictionaries 
-XLSX: Linux: force free memory on the heap to be released back to the operating system 
-Non-conforming elf file causes engine to hang
-Reverted changes that incorrectly removed content that was not DDE.
-Fix for rendering issue caused by DDE removal
-Extra restrictions when gathering field codes for DDE
-Fix for crashing PDF caused by an out bounds access
-Fix for crashing PDF. Error reporting function was called with two format arguments
-Updated MP4 camera with lots of structural fixes and inclusion of missing h265 structures
+- DDE - Fix for rendering issue caused by DDE removal 
+- Fix Fuzzed Doc files causing engine to hang (113996). 
+- PDF: Handle empty article thread arrays correctly 
+- PPTX: Fix for end of stream errors 
+- TIFF: Alignment of handling with Editor (size in analysis reports, geotag validation) 
+- XLSM: Fix for end of stream errors 
+- PDF: Prevent early bailout when invalid image stream is encountered during syntax checking 
+- XLS: file with hyperlinks needs repairing 
+- XLS: Analysis report stops reporting after embedded image Issue item is reported 
+- XLSM: Fix applied for repair message appearing for Threaded Comments 
+- DOCX: Fix hyperlink sanitisation repair message popup 
+- Fix issue with validation of MachO Segment Command length fields 
+- PDF: Respect governing content management switch when reporting non-conformances in source dictionaries 
+- XLSX: Linux: force free memory on the heap to be released back to the operating system 
+- Non-conforming elf file causes engine to hang
+- Reverted changes that incorrectly removed content that was not DDE.
+- Fix for rendering issue caused by DDE removal
+- Extra restrictions when gathering field codes for DDE
+- Fix for crashing PDF caused by an out bounds access
+- Fix for crashing PDF. Error reporting function was called with two format arguments
+- Updated MP4 camera with lots of structural fixes and inclusion of missing h265 structures
 
 
 ### Rebuild v1.197
