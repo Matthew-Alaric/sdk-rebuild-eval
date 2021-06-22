@@ -1,40 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
-  <pdfConfig>    
-    <watermark>Glasswall Protected</watermark>
-    <acroform>sanitise</acroform>
-    <metadata>sanitise</metadata>
-    <javascript>sanitise</javascript>
-    <actions_all>sanitise</actions_all>
-    <embedded_files>sanitise</embedded_files>
-    <internal_hyperlinks>sanitise</internal_hyperlinks>
-    <external_hyperlinks>sanitise</external_hyperlinks>
-  </pdfConfig>
-  
-  <wordConfig>
-    <macros>sanitise</macros>
-    <metadata>sanitise</metadata>
-    <embedded_files>sanitise</embedded_files>
-    <review_comments>sanitise</review_comments>
-    <internal_hyperlinks>sanitise</internal_hyperlinks>
-    <external_hyperlinks>sanitise</external_hyperlinks>
-  </wordConfig>
-  
-  <pptConfig>
-    <macros>sanitise</macros>
-    <metadata>allow</metadata>
-    <embedded_files>allow</embedded_files>
-    <review_comments>allow</review_comments>
-    <internal_hyperlinks>allow</internal_hyperlinks>
-    <external_hyperlinks>allow</external_hyperlinks>
-  </pptConfig>
-  
-  <xlsConfig>
-    <macros>sanitise</macros>
-    <metadata>sanitise</metadata>
-    <embedded_files>sanitise</embedded_files>
-    <review_comments>sanitise</review_comments>
-    <internal_hyperlinks>sanitise</internal_hyperlinks>
-    <external_hyperlinks>sanitise</external_hyperlinks>
-  </xlsConfig>  
+    <pdfConfig>
+        <watermark>Glasswall Protected</watermark>
+        <acroform>sanitise</acroform>
+        <metadata>sanitise</metadata>
+        <javascript>sanitise</javascript>
+        <actions_all>sanitise</actions_all>
+        <embedded_files>sanitise</embedded_files>
+        <internal_hyperlinks>sanitise</internal_hyperlinks>
+        <external_hyperlinks>sanitise</external_hyperlinks>
+    </pdfConfig>
+
+    <wordConfig>
+        <macros>sanitise</macros>
+        <metadata>sanitise</metadata>
+        <embedded_files>sanitise</embedded_files>
+        <review_comments>sanitise</review_comments>
+        <internal_hyperlinks>sanitise</internal_hyperlinks>
+        <external_hyperlinks>sanitise</external_hyperlinks>
+    </wordConfig>
+
+    <pptConfig>
+        <macros>sanitise</macros>
+        <metadata>allow</metadata>
+        <embedded_files>allow</embedded_files>
+        <review_comments>allow</review_comments>
+        <internal_hyperlinks>allow</internal_hyperlinks>
+        <external_hyperlinks>allow</external_hyperlinks>
+    </pptConfig>
+
+    <xlsConfig>
+        <macros>sanitise</macros>
+        <metadata>sanitise</metadata>
+        <embedded_files>sanitise</embedded_files>
+        <review_comments>sanitise</review_comments>
+        <internal_hyperlinks>sanitise</internal_hyperlinks>
+        <external_hyperlinks>sanitise</external_hyperlinks>
+    </xlsConfig>
+
+    <tiffConfig>
+        <geotiff>allow</geotiff>
+        <geotiff_allowlist>
+            <geokey_id>3072</geokey_id>
+            <geokey_id>3073</geokey_id>
+        </geotiff_allowlist>
+        <geotiff_denylist>
+            <geokey_id>2049</geokey_id>
+        </geotiff_denylist>
+        <geotiff_requiredlist>
+            <geokey_id>1024</geokey_id>
+            <geokey_id>1025</geokey_id>
+            <geokey_id>1026</geokey_id>
+        </geotiff_requiredlist>
+    </tiffConfig>
+
 </config>

@@ -62,11 +62,12 @@ If an XML configuration file is not specified on the command line, then GWFileCo
 
 ### Configuration Format
 The format configuration within this file is described formally in the XSD located in the glasswall sdk documentation. 
-This configuration is passed unchanged to the GWFileConfigXML function. An example of a full configuration file is shown below 
+This configuration is passed unchanged to the GWFileConfigXML function. An example of a configuration file is shown below 
 
 ```
 <?xml version="1.0" encoding="UTF-8"?> 
 <config> 
+
   <pdfConfig>     
     <watermark>Glasswall Protected</watermark> 
     <acroform>sanitise</acroform> 
@@ -78,6 +79,7 @@ This configuration is passed unchanged to the GWFileConfigXML function. An examp
     <internal_hyperlinks>sanitise</internal_hyperlinks> 
     <external_hyperlinks>sanitise</external_hyperlinks> 
   </pdfConfig> 
+
   <wordConfig> 
     <macros>sanitise</macros> 
     <metadata>sanitise</metadata> 
@@ -88,6 +90,7 @@ This configuration is passed unchanged to the GWFileConfigXML function. An examp
     <external_hyperlinks>sanitise</external_hyperlinks> 
     <dynamic_data_exchange>sanitise</dynamic_data_exchange> 
   </wordConfig> 
+
   <pptConfig> 
     <macros>sanitise</macros> 
     <metadata>sanitise</metadata> 
@@ -97,6 +100,7 @@ This configuration is passed unchanged to the GWFileConfigXML function. An examp
     <internal_hyperlinks>sanitise</internal_hyperlinks> 
     <external_hyperlinks>sanitise</external_hyperlinks> 
   </pptConfig> 
+
   <xlsConfig> 
     <macros>sanitise</macros> 
     <metadata>sanitise</metadata> 
@@ -105,7 +109,25 @@ This configuration is passed unchanged to the GWFileConfigXML function. An examp
     <review_comments>sanitise</review_comments> 
     <internal_hyperlinks>sanitise</internal_hyperlinks> 
     <external_hyperlinks>sanitise</external_hyperlinks> 
-    <dynamic_data_exchange>sanitise</dynamic_data_exchange>   </xlsConfig> 
+    <dynamic_data_exchange>sanitise</dynamic_data_exchange>   
+  </xlsConfig>
+
+  <tiffConfig>
+    <geotiff>allow</geotiff>
+    <geotiff_allowlist>
+      <geokey_id>3072</geokey_id>
+      <geokey_id>3073</geokey_id>
+    </geotiff_allowlist>
+    <geotiff_denylist>
+      <geokey_id>2049</geokey_id>
+    </geotiff_denylist>
+    <geotiff_requiredlist>
+      <geokey_id>1024</geokey_id>
+      <geokey_id>1025</geokey_id>
+      <geokey_id>1026</geokey_id>
+    </geotiff_requiredlist>
+  </tiffConfig> 
+
 </config> 
 
 ```
@@ -121,4 +143,86 @@ This configuration is passed unchanged to the GWFileConfigXML function. An examp
 |                        | disallow                           | Configures Glasswall to   raise an issue if document element types associated with this content   management flag are found within any document being processed.                                                                    |
 | watermark              | Freeform text, up to 20 Characters | Specifying a null element .i.e., <watermark />, results 20   characters                                                                                                                                                             |
 
+#### GeoTiff Configuration
+
+##### GeoTiff policy Snippet
+```
+<tiffConfig>
+    
+    <geotiff>sanitise</geotiff>
+        
+    <geotiff_allowlist>                 
+        <geokey_id>3072</geokey_id>
+        <geokey_id>3073</geokey_id>			
+    </geotiff_allowlist>
+        
+    <geotiff_denylist>		
+        <geokey_id>2049</geokey_id> 
+    </geotiff_denylist>
+        
+    <geotiff_requiredlist>
+        <geokey_id>1024</geokey_id>
+        <geokey_id>1025</geokey_id>
+        <geokey_id>1026</geokey_id>
+    </geotiff_requiredlist>
+        
+</tiffConfig>
+```
+
+###### GeoTiff Policy Snippet Description
+
+```
+<tiffConfig>    
+    <geotiff>sanitise</geotiff>
+    ...
+```
+This is the parent geotiff setting. If set to **allow** or **disallow** the policy lists (**allowlist**, **denylist**, 
+**requiredlist**) do not come into effect. If set to **allow** all tags are left intact in the regenerated file. 
+If set to **disallow** the file is blocked and will not be regenerated if geo tiff content is present.
+If set to **sanitise** tags outside of the policy lists (**allowlist**, 
+**denylist**, **requiredlist**) are removed.
+
+```
+...
+    <geotiff_allowlist>                 
+        <geokey_id>3072</geokey_id>
+        <geokey_id>3073</geokey_id>			
+    </geotiff_allowlist>
+...
+
+```
+
+Geo keys in the **allowlist** will be preserved and will therefore be present in the regenerated file.
+
+```
+...
+    <geotiff_denylist>		
+        <geokey_id>2049</geokey_id> 
+    </geotiff_denylist>
+...
+
+```
+
+If any geo keys in the **denylist** are present in the file during processing, the file will be blocked and will not be 
+regenerated
+
+```
+...
+    <geotiff_requiredlist>
+        <geokey_id>1024</geokey_id>
+        <geokey_id>1025</geokey_id>
+        <geokey_id>1026</geokey_id>
+    </geotiff_requiredlist>
+</tiffConfig>
+
+```
+
+One or more of the geo keys in the **requiredlist** must be present in the file. If no required keys are present in the 
+file, the file will be blocked and will not be regenerated. 
+
+Example of geo keys can be found [here](https://exiftool.org/TagNames/GeoTiff.html) 
+
+Where,
+```
+    geokey_id == tag ID
 ```

@@ -6,11 +6,11 @@ Evaluation versions of the Glasswall Rebuild SDK which expires after 30 days.
 
 Table below contains the version numbers for the libraries and tools in this repository.
 
-| Name                                                 | Current Version |
-|------------------------------------------------------|-----------------|
-| Glasswall  Rebuild (libglasswall.classic.so)         | 1.241           |
-| Archive Manager (libglasswall.archive.manager.so)    | 0.8             |
-| Glasswall Command Line Tool (glasswallCLI)           | 0.7             |
+| Name                                                                       | Current Version |
+|----------------------------------------------------------------------------|---------------------|
+| Glasswall Rebuild (libglasswall.classic.so) - GeoTiff Pre release          | 1.1850              |
+| Archive Manager (libglasswall.archive.manager.so)                          | 0.8                 |
+| Glasswall Command Line Tool (glasswallCLI)                                 | 0.7                 |
 
 ### Change Log
 

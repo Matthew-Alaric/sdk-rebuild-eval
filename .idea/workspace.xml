@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="242daede-cf75-466b-a965-22b6e5423120" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sdk-rebuild-eval.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/other/geotiff_verification_example.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.data/geotiff/set_000/GeoTif_1.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.data/geotiff/set_000/GeoTif_193.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.data/geotiff/set_000/GeoTif_54.TIF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.data/geotiff/set_000/UTM2GTIF.TIF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.data/geotiff/set_000/acea.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.data/geotiff/set_000/albers27.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.data/geotiff/set_000/brit_nat-2.tif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.data/geotiff/set_000/cea.tif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Changelog.md" beforeDir="false" afterPath="$PROJECT_DIR$/Changelog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/rebuild/linux/libglasswall.classic.so" beforeDir="false" afterPath="$PROJECT_DIR$/libs/rebuild/linux/libglasswall.classic.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/rebuild/windows/glasswall.classic.dll" beforeDir="false" afterPath="$PROJECT_DIR$/libs/rebuild/windows/glasswall.classic.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.data/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/test.data/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/command.line.tool/configs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/tools/command.line.tool/configs/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/command.line.tool/configs/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tools/command.line.tool/configs/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xsd/gwConfigurationManagement.xsd" beforeDir="false" afterPath="$PROJECT_DIR$/xsd/gwConfigurationManagement.xsd" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1uGxYiIlbbRQq7TGhygK1d1llGV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="242daede-cf75-466b-a965-22b6e5423120" name="Default Changelist" comment="" />
+      <created>1624305776066</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1624305776066</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
