@@ -1,4 +1,4 @@
-# Glasswall Rebuild SDK (Evaluation Version)
+# ![Rebuild-SDK_40](https://user-images.githubusercontent.com/58085356/124765234-ac2bb500-df2d-11eb-8464-492cb33e5afc.png)Glasswall Rebuild SDK (Evaluation Version)
 
 Evaluation versions of the Glasswall Rebuild SDK which expires after 30 days.
 
