@@ -1,4 +1,4 @@
-# Glasswall Rebuild Evaluatiobn SDK - Changelog
+# Glasswall Rebuild Evaluation SDK - Changelog
 All notable changes to this project will be documented in this file. It is only updated persiodically to align with publshed releases or significant updates to this repository.
 
 ## Known Issues
