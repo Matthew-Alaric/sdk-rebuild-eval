@@ -105,6 +105,8 @@ In the example below, we have carried out two separate runs on the same file. In
 configured only to remove geo key entries specified by the geo key ID. In Figure 2, the file was processed with the 
 configuration to remove all georeferencing information.
 
+The test file used can be found [here](https://github.com/filetrust/sdk-rebuild-eval/blob/pre_release_1.1850/test.data/geotiff/set_000/brit_nat-2.tif)
+
 #### Figure 1
 The image below shows geo tiff structure trees for a file before and after processing, where all geo keys have been set 
 for removal (by listing each geo key entry ID in the policy file).
