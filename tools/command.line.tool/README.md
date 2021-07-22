@@ -1,13 +1,24 @@
-# Glasswall Rebuild - Command Line Tool 
+# Glasswall Rebuild - Command Line Interface (CLI) Tool 
 
 ## Usage
 
-The Command Line Test Tool can be used in the following manner.  
-```
-commandlinetesttool.exe  -config=configFile [ -xmlconfig=xmlConfigFile] 
-```
+The Command Line Interface (CLI) Tool can be used in the following manners.  
 
-The contents of configFile and xmlConfigFile are described in the following sections. 
+### Process files through Rebuild
+
+```
+commandlinetool.exe  -config=configFile [ -xmlconfig=xmlPolcyFile] 
+```
+**Note: The Glasswall Rebuild library must be in the same directory as the CLI tool. it is recommended to have at least 8gb of free memory to run Glasswall**
+
+The contents of configFile and xmlConfigFile are described in the following sections.
+
+### Other CLI command options
+-v – get SDK rebuild version number.
+-h – get help and command syntax information.
+-a XMLOUTPUTFILE – write out all issue ids to xmloutputfile.
+-b ID_NUM TXTOUTPUTFILE – write out the technical description for issue id ID_NUM to TXTOUTPUTFILE.
+ 
 
 ### Return values
 
@@ -25,7 +36,7 @@ This is passed to the commandlinetesttool executable using the **–config** opt
 
 ### Configuration Format
 
-The configuration file is a text file that enables the operation of the test tool to be configured. 
+The configuration file is a text file that enables the operation of CLI to be configured. 
 The file is made up of sections and associated configuration item name\value pairs. 
 
 For example 
@@ -99,9 +110,18 @@ All configuration value default to either ‘0’ or an empty string, where appr
 |                          |                                                | 5  = Import Mode                                                                                                                                                |
 |                          |                                                | Import images from an Interchange Package. The expected format is a ZIP   archive. reportMode must be set to 0.                                                 |
 |                          |                                                |                                                                                                                                                                 |
+|                          |                                                | 6 = Archive Analysis                                                                                                                                                |
+|                          |                                                | Runs analysis process modes on files within archives such as ZIP.                                                                                                                                                                |
+|                          |                                                |                                                                                                                                                                 |
+|                          |                                                | 7 = Archive Protect                                                                                                                                                                 |
+|                          |                                                | Runs protect process modes on files within archives such as ZIP.                                                                                                                                                                 |
+|                          |                                                |                                                                                                                                                                 |
+|                          |                                                | 8 = Word Search                                                                                                                                                                |
+|                          |                                                | Not supported                                                                                                                                         |
+|                          |                                                |                                                                                                                                                                 |
 |                          |                                                | Note: The Short form of Report produced has no content items listed; only   Sanitisations/Issue and Remedies                                                    |
 |                          |                                                |                                                                                                                                                                 |
-| reportMode               | [0\|1]                                         | 1 = Invokes the APIs that also produce a report.  For example, GWFileAnalysisAuditAndReport.   If writeOutput is set to zero, no reports will be produced.      |
+| reportMode               | [0\|1]                                         | 1 = Invokes the APIs that also produce a report.  For example, GWFileAnalysisAuditAndReport.   If writeOutput is set to zero, no reports will be produced. These logs are for low level analysis of how Glasswall handles the files and should not be made availible to the end users.      |
 |                          |                                                |                                                                                                                                                                 |
 | writeOutput              | [0\|1]                                         | 0 = No managed document or analysis report is produced 1 = Managed   document and/or analysis reports are produced where appropriate and if   reportMode is 1.  |
 | quarantineNonconforming  | [0\|1]                                         | 1 = copy non-conforming document to quarantine folder.                                                                                                          |
@@ -118,7 +138,7 @@ All configuration value default to either ‘0’ or an empty string, where appr
 | logProcessStatus         | [0\|1]                                         | 1 = Includes the process status information (from                                                                                                               |
 |                          |                                                | GWFileProcessMsg and GWFileProcessStatus) in the process log. This is an   optional flag that defaults to 0 to denote    no process status logging.             |
 
-If an XML configuration file is not specified on the command line, then GWFileConfigXml is not called before the specified document processing function is called. 
+If an XML policy is not specified on the command line, then GWFileConfigXml is not called before the specified document processing function is called. 
 
 #### Mapping - CLI Modes To Glasswall API 
 
@@ -149,7 +169,7 @@ The table below displays the API functions that are called under the various CLI
 |     GWMemoryToMemoryProtect                      |     1                |     0               |     2                          |
 |     GWMemoryToMemoryAnalysisAudit                |     0                |     0               |     2                          |
 
-Setting the FileType option to ‘*’ will enable Glasswalls file type detection capability via a call to the 
+Setting the FileType option to ‘*’ will enable Glasswall's file type detection capability via a call to the 
 GWDetermineFileTypeFromFile API function (See the ‘Configuration Settings’ section). This will enable CLI to automatically determine the file type for each file that is about to be processed. 
 Supplying the ‘–h’ option to the CLI tool will display a help menu that provides additional help information as well as instructions on how to run the tool to produce the output for the following additional API functions. 
 
@@ -177,11 +197,11 @@ The following API functions are called by the CLI tool when generating the Glass
  
 For more information on each API function please refer to the Glasswall SDK documentation.  
 
-## XML Configuration File Description
+## XML Policy File Description
 
 ### Configuration Format
-The format configuration within this file is described formally in the XSD located in the glasswall sdk documentation. 
-This configuration is passed unchanged to the GWFileConfigXML function. An example of a full configuration file is shown below 
+The format within this file is described formally in the XSD located in the glasswall sdk documentation. 
+This poliy file is passed unchanged to the GWFileConfigXML function. An example of a full policy file is shown below 
 
 ```
 <?xml version="1.0" encoding="UTF-8"?> 
@@ -231,7 +251,7 @@ This configuration is passed unchanged to the GWFileConfigXML function. An examp
 
 **Note:** The xlsConfig, pptConfig, and wordConfig cover both office XML and office binary file types. 
 
-### Configuration Settings
+### Policy Settings
 
 | Type                   | Value                              | Notes                                                                                                                                                                                                                               |
 |------------------------|------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -240,11 +260,21 @@ This configuration is passed unchanged to the GWFileConfigXML function. An examp
 |                        | disallow                           | Configures Glasswall to   raise an issue if document element types associated with this content   management flag are found within any document being processed.                                                                    |
 | watermark              | Freeform text, up to 20 Characters | Specifying a null element .i.e., <watermark />, results 20   characters                                                                                                                                                             |
 
+### Policy Details
 
-## Test Tool Log File Format
+In addition to the behaviours recorded above the following is a breakdown of specific policies that behave slightly differently:
+
+| Type                   | Value                              | Notes                                                                                                                                                                                                                               |
+|------------------------|------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Hyperlinks             | sanitise                          | The hyperlink targets will be removed but the text will remain in the document.   This removal will be logged in analysis reports as a ‘sanitisation item’  |
+| embedded_files         | sanitise                          | Embedded files within the document are passed to the Glasswall engine and are processed in accordance with there policy, files not supported by Glasswall will be removed.                                                                                       |
+| embedded_images        | sanitise                           | Embedded images within the document are passed to the Glasswall engine and are processed in accordance with there policy, images not supported by Glasswall will be removed                                                                    |
+
+
+## CLI Log File Format
 
 ### Files Log
-Produced by the test application before the processing of the files is started.  Compiled from the specified input location, documenting the complete list of files to be processed. 
+Produced by CLI before the processing of the files is started.  Compiled from the specified input location, documenting the complete list of files to be processed. 
 The format of each line follows the same specification. 
 ```
 ==nnnnn== Filename 
@@ -254,7 +284,7 @@ One file is listed on each line, where nnnnn is a zero indexed counter that incr
 
 ### Application Log
 
-Produced by the test application recording the results of processing. The file structure is made up of a header, body and footer. 
+Produced by CLI recording the results of processing. The file structure is made up of a header, body and footer. 
 
 #### Header
 
@@ -271,10 +301,9 @@ SOFTWARE VERSION PLUGIN_GLASSWALL_DLL:ANALYSE_AUDIT.MANAGE.PROTECT.01.01..BUILD(
 ************************************************************* 
 ```
 
-#### Configuration
+#### Policy
 
-A record of the configuration settings being used by the Glasswall DLL during testing.  The information is provided in 
-the XML format used when configuring the test. The configuration is provided by the DLL from the GWFileConfigGet function, rather than being a copy of what has been passed into the test tool. 
+A record of the policy settings being used by the Glasswall DLL during the run.  The information is provided in the XML format used when configuring the run. The configuration is provided by the DLL from the GWFileConfigGet function, rather than being a copy of what has been passed to CLI, so default values used will be displayed if switches are missing from the policy file. 
 
 #### Body
 
